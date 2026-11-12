@@ -1,0 +1,21 @@
+*{box-sizing:border-box}
+body{margin:0;background:#05070D;color:#E3E7F0;font-family:'Noto Sans JP',system-ui,sans-serif;line-height:1.9;font-size:16px}
+a{color:#A9B6FF}a:hover{color:#D3DAFF}
+a:focus{outline:2px solid #8FA2FF;outline-offset:3px}
+.lh{max-width:880px;margin:0 auto;padding:24px 20px}
+.brand{display:inline-flex;align-items:center;gap:12px;color:#F3F5FA;text-decoration:none;font-weight:900;font-size:19px;letter-spacing:.1em}
+.dotlogo{width:30px;height:30px;border-radius:50%;background:linear-gradient(90deg,#7DE3FF,#8FA2FF 35%,#D59BFF 65%,#FFD27A)}
+.legal{max-width:880px;margin:0 auto;padding:32px 20px 80px}
+.eyebrow{margin:0 0 12px;font-family:Inter,sans-serif;font-weight:600;font-size:13px;letter-spacing:.4em;color:#A9B6FF}
+h1{margin:0 0 32px;font-weight:900;font-size:clamp(28px,5vw,44px);line-height:1.4;color:#F3F5FA}
+h2{margin:48px 0 12px;font-size:20px;font-weight:900;color:#F3F5FA;padding-top:20px;border-top:1px solid rgba(243,245,250,.1)}
+p,li,dd{color:#C3C9D6}
+ul{padding-left:1.4em}
+li{margin:6px 0}
+dl{display:grid;grid-template-columns:minmax(0,11em) minmax(0,1fr);gap:8px 20px;margin:12px 0}
+dt{color:#8F97A8;font-size:14px}
+dd{margin:0}
+@media (max-width:560px){dl{grid-template-columns:1fr;gap:2px}dd{margin-bottom:10px}}
+.date{margin-top:48px;color:#8F97A8;font-size:14px}
+.back{margin-top:24px}
+.lf{border-top:1px solid rgba(243,245,250,.08);padding:22px 20px 30px;text-align:center;font-size:12px;color:#8F97A8}
