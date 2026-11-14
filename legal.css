@@ -19,3 +19,4 @@ dd{margin:0}
 .date{margin-top:48px;color:#8F97A8;font-size:14px}
 .back{margin-top:24px}
 .lf{border-top:1px solid rgba(243,245,250,.08);padding:22px 20px 30px;text-align:center;font-size:12px;color:#8F97A8}
+h1,h2{word-break:keep-all;overflow-wrap:anywhere}

@@ -63,3 +63,13 @@ section[id],form[id]{scroll-margin-top:16px}
   form#apply-form,form#contact-form{padding:32px 20px!important}
   #experienced .iri-ring{padding:28px 20px!important}
 }
+
+/* ---- phone polish ---- */
+h1,h2,h3{word-break:keep-all;overflow-wrap:anywhere}
+section > div > p[style*="clamp(30px"]{word-break:keep-all;overflow-wrap:anywhere}
+@media (max-width:600px){
+  #top video + div{background:linear-gradient(180deg,rgba(5,7,13,.55) 0%,rgba(5,7,13,.82) 40%,rgba(5,7,13,.9) 100%)!important}
+  h2{font-size:30px!important}
+  a[href="#apply-form"][style*="min-height: 5"],a[href="#apply-form"][style*="min-height: 6"]{width:100%;justify-content:center;padding:0 18px!important;white-space:nowrap;font-size:16px!important}
+  header a[href="#apply-form"]{width:auto}
+}
