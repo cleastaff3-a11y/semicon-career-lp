@@ -4,7 +4,7 @@
 (function () {
   'use strict';
 
-  var GAS_URL = 'https://script.google.com/macros/s/ここにデプロイIDを貼る/exec';
+  var GAS_URL = 'https://script.google.com/macros/s/AKfycbxTq09kpF4h2cOuoO8YM6oIIR9frvgudSt9rJ8kIBjJcntT9bn6YTiPaifC9pCS8A/exec';
 
   /* ---------- hero video ---------- */
   var vid = document.querySelector('#top video');
