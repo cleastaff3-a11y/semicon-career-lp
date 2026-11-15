@@ -180,13 +180,18 @@
         body: JSON.stringify(payload(form, kind)),
         redirect: 'follow',
         credentials: 'omit'
-      }).then(function (r) { return r.json(); })
+      }).then(function (r) {
+          return r.text().then(function (t) {
+            try { return JSON.parse(t); } catch (e) { throw new Error('E2-' + r.status); }
+          });
+        }, function () { throw new Error('E1'); })
         .then(function (res) {
           if (res && res.ok) { showDone(form, kind); return; }
-          throw new Error((res && res.error) || 'failed');
+          throw new Error('E3-' + ((res && res.error) || 'failed'));
         })
-        .catch(function () {
-          msg.textContent = '送信できませんでした。通信環境をご確認のうえ、時間をおいてもう一度お試しください。';
+        .catch(function (err) {
+          var code = (err && err.message) || 'E0';
+          msg.textContent = '送信できませんでした。通信環境をご確認のうえ、時間をおいてもう一度お試しください。（' + code + '）';
           sending = false; btn.disabled = false; btn.textContent = label;
         });
     });
