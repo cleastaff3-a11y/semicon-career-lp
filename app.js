@@ -153,7 +153,18 @@
       : '内容を確認のうえ、担当者よりご連絡いたします。'));
     form.textContent = '';
     form.appendChild(box);
-    box.focus();
+    try { box.focus({ preventScroll: true }); } catch (e) {}
+    // 応募完了後は「ENTRY」セクションの先頭に戻す（フォームが縮んでフッターまで飛ぶのを防ぐ）
+    var sec = kind === 'apply' ? document.getElementById('apply') : null;
+    if (sec) {
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      // 見出し（ENTRY）から完了メッセージまでが入る位置へ。画面が低い場合は完了メッセージが必ず見える位置を優先
+      var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+      var secTop = sec.getBoundingClientRect().top + y;
+      var formBottom = form.getBoundingClientRect().bottom + y;
+      var target = Math.max(secTop, formBottom - window.innerHeight + 24);
+      try { window.scrollTo({ top: target, behavior: reduce ? 'auto' : 'smooth' }); } catch (e) { window.scrollTo(0, target); }
+    }
   }
 
   function setup(form) {
